@@ -10,6 +10,15 @@ function NewPlantForm() {
         <input type="number" name="price" step="0.01" placeholder="Price" />
         <button type="submit">Add Plant</button>
       </form>
+      <div className="plant-list">
+        {filterdPlants.map ((plant) => ( 
+        <PlantCard 
+          key={plant.id}
+          plant={plant}
+          markAsSoldOut={markAsSoldOut}
+        />
+        ))}
+      </div>
     </div>
   );
 }
